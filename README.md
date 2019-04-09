@@ -6,3 +6,7 @@ pytorch 用ANN做一个机床微泄漏等级检测，输入的数据是传感器
 效果不佳，应该与原始数据有关。
 
 为了检验和测试模型，其中还包括了MNIST数据集的实验，（验证后模型的实现上是没有问题，目前认为是数据不佳）
+
+tips : 
+一般情况下，深度将会极大影响模型输出，导致不收敛。 引入BatchNormalization可以很好的解决深度带来的问题
+对ReLU的激活函数，使用kaiming_normal初始化，对sigmoid、tanh、softmax可以使用xavier_normal初始化（初始化对模型表现有相当的影响）
