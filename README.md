@@ -12,3 +12,4 @@ pytorch 用ANN做一个机床微泄漏等级检测，输入的数据是传感器
 tips : 
 一般情况下，深度将会极大影响模型输出，导致不收敛。 引入BatchNormalization可以很好的解决深度带来的问题
 对ReLU的激活函数，使用kaiming_normal初始化，对sigmoid、tanh、softmax可以使用xavier_normal初始化（初始化对模型表现有相当的影响）
+注意，BatchNormalization层会对输入进行正规化，使其满足独立同分布，但在测试阶段，假如输入的都是同一类别的实例，将会使结果大打折扣。
